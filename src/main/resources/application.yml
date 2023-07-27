@@ -10,7 +10,8 @@ spring:
         predicates:
         - Path=/users/status/check
         - Method=GET
-        uri: http://localhost:8081
+#        uri: http://localhost:8081
+        uri: lb://demo-resource-server
       - filters:
         - RemoveRequestHeader=Cookie
         id: albums
