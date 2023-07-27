@@ -18,14 +18,16 @@ spring:
         predicates:
         - Path=/albums
         - Method=GET
-        uri: http://localhost:8091
+#        uri: http://localhost:8091
+        uri: lb://demo-resource-albums
       - filters:
         - RemoveRequestHeader=Cookie
         id: photos
         predicates:
         - Path=/photos
         - Method=GET
-        uri: http://localhost:8090
+#        uri: http://localhost:8090
+        uri: lb://demo-resource-photos
 eureka:
   client:
     service-url:
